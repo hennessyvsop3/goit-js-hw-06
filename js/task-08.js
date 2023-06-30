@@ -9,7 +9,6 @@ btnEl.addEventListener('submit', event => {
     if (inputEmail.value === "" || inputPass.value === "") {
         
         alert('Check empty fields');
-        console.log("adada")
     }
     const obj = Array.from(btnEl.elements).reduce((acc, element) =>
     {
