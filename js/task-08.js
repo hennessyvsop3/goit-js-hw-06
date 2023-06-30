@@ -1,16 +1,18 @@
 const btnEl = document.querySelector("form");
-const inputEmail = document.querySelector('input[type="email"]');
-const inputPass = document.querySelector('input[type="password"]');
-console.dir(btnEl);
 
 
-btnEl.addEventListener('submit', event => {
+
+btnEl.addEventListener("submit", checkFunction);
+
+function checkFunction(event) {
+        
     event.preventDefault();
-    if (inputEmail.value === "" || inputPass.value === "") {
+    const {email, password} = event.target.elements
+    if (email.value === "" || password.value === "") {
         
         alert('Check empty fields');
     }
-    const obj = Array.from(btnEl.elements).reduce((acc, element) =>
+    const obj = Array.from(event.target.elements).reduce((acc, element) =>
     {
         if (element.name) {
             acc[element.name] = element.value;
@@ -19,4 +21,8 @@ btnEl.addEventListener('submit', event => {
         return acc;
     }, {})
     console.log(obj);
-})
+    
+}
+    
+
+    

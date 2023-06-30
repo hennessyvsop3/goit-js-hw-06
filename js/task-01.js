@@ -1,13 +1,13 @@
-const arr = document.querySelector('#categories').children;
+const items = document.querySelectorAll('.item');
 
-console.log(`Number of categories: ${arr.length}`);
+console.log(`Number of categories: ${items.length}`);
 
 console.log("");
-Array.from(arr).forEach((el, i) => {
-    console.log(`Category: ${el.querySelector('h2').textContent}`)
+items.forEach((item,i) => {
+    console.log(`Category: ${item.querySelector('h2').textContent}`)
     
-    console.log(`Elements: ${el.querySelectorAll('li').length}`);
-    if (i !== arr.length - 1) {
+    console.log(`Elements: ${item.querySelectorAll('li').length}`);
+    if (i !== items.length - 1) {
         console.log("");
     }
 
