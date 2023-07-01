@@ -21,6 +21,9 @@ const listImages = images.map(img => {
   <img src="${img.url}" alt=${img.alt}/>
   </li>`
 
-}).join("");
+});
+const htmlText = listImages.join("");
 
-list.insertAdjacentHTML("beforeend", listImages);
+list.insertAdjacentHTML("beforeend", htmlText);
+
+
