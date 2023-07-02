@@ -14,7 +14,7 @@ const divElCollection = document.getElementById('boxes');
 
 const newArr = [];
 function createBoxes(amount) {
-  for (let i = 0; i <= amount; i += 1) {
+  for (let i = 0; i < amount; i += 1) {
     let newDiv = document.createElement("div");
     const color = getRandomHexColor();
     const size = 30 + i * 10;
@@ -23,16 +23,25 @@ function createBoxes(amount) {
     newDiv.style.height = `${size}px`;
     newDiv.style.backgroundColor = color;
     newArr.push(newDiv);
-    console.log(newDiv)
+   
   }
   console.log(newArr);
-  divElCollection.append(newArr.join(""));
+  divElCollection.append(...newArr);
 }
+
 
 createBtn.addEventListener("click", () => {
   const amount = inputTextValue.value;
   createBoxes(amount);
 });
+
+
+
+function destroyBoxes() {
+  divElCollection.innerHTML = '';
+  location.reload()
+}
+destroyBtn.addEventListener("click", destroyBoxes);
 
 //   divElCollection.append(newArr.join(""));
 //   console.log(inputTextValue)
